@@ -3,7 +3,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import "./index.less";
+// import "./index.less";
 // import "../themes/custome-theme.less";
 import "../themes/custom-dark.css";
 import "../themes/custom-default.css";
