@@ -8,6 +8,7 @@ import {
 import "../themes/custom-dark.css";
 import "../themes/custom-default.css";
 import React, { useState } from "react";
+import ResumeAll from "./resume-all-type";
 import { ConfigProvider, Layout, Menu, Space, Switch } from "antd";
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -66,10 +67,10 @@ const FronEnd = () => {
             style={{
               margin: "24px 16px",
               padding: 24,
-              minHeight: 280,
+              minHeight:visualViewport.height-182,
             }}
           >
-            Content
+            <ResumeAll />
           </Content>
           <Footer className="site-foot" style={{ textAlign: "center" }}>
             OCEAN GZY
