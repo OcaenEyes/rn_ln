@@ -11,9 +11,9 @@ const Resume01 = () => {
     <div className="resume-detail">
       <PageHeader
         className="site-page-header"
-        onBack={() => null}
-        title="Title"
-        subTitle="This is a subtitle"
+        onBack={() => window.history.back()}
+        title="Reusme"
+        subTitle="This is a resume"
       />
       <Card
         hoverable={true}
