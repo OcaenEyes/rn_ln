@@ -1,7 +1,11 @@
-import SetRoutes from "./routes/router";
-
+import { BrowserRouter } from "react-router-dom";
+import GetALLRoutes from "./routes/router";
 const App = () => {
-  return SetRoutes();
+  return (
+    <BrowserRouter>
+      <GetALLRoutes />
+    </BrowserRouter>
+  );
 };
 
 export default App;

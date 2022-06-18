@@ -1,18 +1,20 @@
-import { useRoutes, BrowserRouter } from "react-router-dom";
-import FronEnd from "../front-end/layouts/index";
+import { useRoutes } from "react-router-dom";
+import FrontEnd from "../front-end/layouts/index";
+import AdminEnd from "../admin/layouts";
 import Resume01 from "../front-end/pages/resume-model-01";
 
 const GetFrontRoutes = () => {
   const routes = useRoutes([
     {
       path: "",
-      element: <FronEnd />,
       children: [
-        {
-          path: "resume01",
-          element: <Resume01 />,
-        },
+        { path: "", element: <FrontEnd /> },
+        { path: "index", element: <FrontEnd /> },
       ],
+    },
+    {
+      path: "resume01",
+      element: <Resume01 />,
     },
   ]);
   return routes;
@@ -22,17 +24,7 @@ const GetAdminRoutes = () => {
   const routes = useRoutes([
     {
       path: "",
-
-      children: [
-        {
-          path: "",
-          element: <FronEnd />,
-        },
-        {
-          path: "resume01",
-          element: <Resume01 />,
-        },
-      ],
+      element: <AdminEnd />,
     },
   ]);
   return routes;
@@ -41,23 +33,15 @@ const GetAdminRoutes = () => {
 const GetALLRoutes = () => {
   const routes = useRoutes([
     {
-      path: "/",
+      path: "/*",
       element: <GetFrontRoutes />,
     },
     {
-      path: "/admin",
+      path: "/admin/*",
       element: <GetAdminRoutes />,
     },
   ]);
   return routes;
 };
 
-const SetRoutes = () => {
-  return (
-    <BrowserRouter>
-      <GetALLRoutes />
-    </BrowserRouter>
-  );
-};
-
-export default SetRoutes;
+export default GetALLRoutes;

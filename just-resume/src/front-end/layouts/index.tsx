@@ -3,16 +3,18 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-// import "./index.less";
+import "./index.less";
 // import "../themes/custome-theme.less";
 import "../themes/custom-dark.css";
 import "../themes/custom-default.css";
 import React, { useState } from "react";
-import ResumeAll from "./resume-all-type";
+// import ResumeAll from "./resume-all-type";
+import GetALLRoutes from "../../routes/router";
 import { ConfigProvider, Layout, Menu, Space, Switch } from "antd";
+import ResumeAll from "./resume-all-type";
 const { Header, Sider, Content, Footer } = Layout;
 
-const FronEnd = () => {
+const FrontEnd = () => {
   const [prefix, setPrefix] = useState("custom-default");
   const [changeStatus, setChangeStatus] = useState(true);
 
@@ -26,11 +28,10 @@ const FronEnd = () => {
       setChangeStatus(!changeStatus);
     }
   };
-
   return (
     <ConfigProvider prefixCls={prefix}>
-      <Layout className={`site-layout ${prefix} `} style={{ height: "100%" }}>
-        <Sider className="site-slider" breakpoint="lg" collapsedWidth="0">
+      <Layout className={`site-layout ${prefix} `}>
+        <Sider className="site-side" breakpoint="lg" collapsedWidth="0">
           <Menu
             mode="inline"
             defaultSelectedKeys={["1"]}
@@ -62,14 +63,7 @@ const FronEnd = () => {
               />
             </Space>
           </Header>
-          <Content
-            className="site-content"
-            style={{
-              margin: "24px 16px",
-              padding: 24,
-              minHeight:visualViewport.height-182,
-            }}
-          >
+          <Content id="site-content" className="site-content">
             <ResumeAll />
           </Content>
           <Footer className="site-foot" style={{ textAlign: "center" }}>
@@ -81,4 +75,4 @@ const FronEnd = () => {
   );
 };
 
-export default FronEnd;
+export default FrontEnd;

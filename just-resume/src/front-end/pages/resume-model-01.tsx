@@ -4,13 +4,13 @@ import {
   EllipsisOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import React from "react";
+
 const Resume01 = () => {
   const { Meta } = Card;
   return (
     <Card
       hoverable={true}
-      style={{backgroundColor:"#000"}}
+      style={{ backgroundColor: "#000" }}
       cover={
         <img
           alt="example"
@@ -31,5 +31,4 @@ const Resume01 = () => {
     </Card>
   );
 };
-
 export default Resume01;
