@@ -8,10 +8,9 @@ import "./index.less";
 import "../themes/custom-dark.css";
 import "../themes/custom-default.css";
 import React, { useState } from "react";
-// import ResumeAll from "./resume-all-type";
-import GetALLRoutes from "../../routes/router";
 import { ConfigProvider, Layout, Menu, Space, Switch } from "antd";
-import ResumeAll from "./resume-all-type";
+import { Route, Routes } from "react-router-dom";
+import CustomeRoutes from "../../routes/router";
 const { Header, Sider, Content, Footer } = Layout;
 
 const FrontEnd = () => {
@@ -63,8 +62,17 @@ const FrontEnd = () => {
               />
             </Space>
           </Header>
+
           <Content id="site-content" className="site-content">
-            <ResumeAll />
+            <Routes>
+              {CustomeRoutes.ResumeRoutes.map((item, key) => (
+                <Route
+                  key={key}
+                  path={item.path}
+                  element={item.element}
+                ></Route>
+              ))}
+            </Routes>
           </Content>
           <Footer className="site-foot" style={{ textAlign: "center" }}>
             OCEAN GZY

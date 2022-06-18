@@ -10,7 +10,7 @@ const ResumeAll = () => {
   const { Meta } = Card;
   const listResumes = [1, 2, 3, 4, 5, 6, 7].map((num, index) => (
     <Col key={index}>
-      <Link to={"/resume0"+num}>
+      <Link to={"resume0" + num}>
         <Card
           hoverable={true}
           cover={
@@ -34,7 +34,7 @@ const ResumeAll = () => {
       </Link>
     </Col>
   ));
-  return <Row gutter={[16, 16]}>{listResumes}</Row>;
+  return <Row gutter={[18, 18]}>{listResumes}</Row>;
 };
 
 export default ResumeAll;

@@ -1,32 +1,54 @@
 import { useRoutes } from "react-router-dom";
 import FrontEnd from "../front-end/layouts/index";
 import AdminEnd from "../admin/layouts";
-import Resume01 from "../front-end/pages/resume-model-01";
+import ResumeAll from "../front-end/pages/resumes/resume-all-type";
+import Resume01 from "../front-end/pages/resumes/resume-model-01";
+
+const ResumeRoutes = [
+  {
+    path: "",
+    element: <ResumeAll />,
+  },
+  {
+    path: "resume",
+    element: <ResumeAll />,
+  },
+  {
+    path: "resume01",
+    element: <Resume01 />,
+  },
+];
+const FrontRoutes = [
+  {
+    path: "*",
+    children: [
+      {
+        path: "*",
+        element: <FrontEnd />,
+        children: ResumeRoutes,
+      },
+      {
+        path: "index",
+        element: <FrontEnd />,
+        children: ResumeRoutes,
+      },
+    ],
+  },
+];
+const AdminRoutes = [
+  {
+    path: "*",
+    element: <AdminEnd />,
+  },
+];
 
 const GetFrontRoutes = () => {
-  const routes = useRoutes([
-    {
-      path: "",
-      children: [
-        { path: "", element: <FrontEnd /> },
-        { path: "index", element: <FrontEnd /> },
-      ],
-    },
-    {
-      path: "resume01",
-      element: <Resume01 />,
-    },
-  ]);
+  const routes = useRoutes(FrontRoutes);
   return routes;
 };
 
 const GetAdminRoutes = () => {
-  const routes = useRoutes([
-    {
-      path: "",
-      element: <AdminEnd />,
-    },
-  ]);
+  const routes = useRoutes(AdminRoutes);
   return routes;
 };
 
@@ -43,5 +65,12 @@ const GetALLRoutes = () => {
   ]);
   return routes;
 };
-
-export default GetALLRoutes;
+const CustomeRoutes = {
+  ResumeRoutes,
+  FrontRoutes,
+  AdminRoutes,
+  GetFrontRoutes,
+  GetAdminRoutes,
+  GetALLRoutes,
+};
+export default CustomeRoutes;
