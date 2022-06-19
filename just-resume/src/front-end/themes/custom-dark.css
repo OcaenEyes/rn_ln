@@ -15475,17 +15475,16 @@ textarea.custom-dark-input-number {
   overflow: hidden;
 }
 .custom-dark-layout-sider-zero-width-trigger {
-  position: absolute;
+  position: fixed;
   top: 64px;
-  right: -36px;
-  z-index: 1;
+  z-index: 999;
   width: 36px;
   height: 42px;
-  color: #fff;
+  color: #575757;
   font-size: 18px;
   line-height: 42px;
   text-align: center;
-  background: #252a34;
+  background: #fff;
   border-radius: 0 2px 2px 0;
   cursor: pointer;
   transition: background 0.3s ease;

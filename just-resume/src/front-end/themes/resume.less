@@ -1,12 +1,59 @@
-.resume-detail{
-    display: flex;
-    flex-direction: column;
-    height: 96vh;
-    .resume-detail-content{
-        overflow-y: auto;
-        margin: 8px 10%;
-        &::-webkit-scrollbar{
-            display: none;
-        }
+.resume-detail {
+  display: flex;
+  flex-direction: column;
+  height: 96vh;
+  .resume-detail-content {
+    // overflow-y: auto;
+    margin: 8px 10%;
+    // &::-webkit-scrollbar{
+    //     display: none;
+    // }
+    .resume-tag {
+      font-size: 16px;
+      height: 28px;
+      line-height: 1.5;
+      font-weight: bold;
     }
+    .resume-detail-user-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 16px 24px 16px 24px;
+      line-height: 2;
+    }
+    .resume-detail-project-info {
+      padding: 18px;
+      line-height: 2;
+
+      .project-summary {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+    }
+    .resume-detail-work-info {
+      padding: 18px;
+      line-height: 2;
+
+      .work-summary {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+    }
+    .resume-detail-skill-info {
+      padding: 18px;
+      line-height: 2;
+
+      .skill {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
 }
