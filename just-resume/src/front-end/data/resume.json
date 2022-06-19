@@ -1,0 +1,32 @@
+{
+  "userInfo": {
+    "headImg": "",
+    "name": "OCEAN GZY",
+    "phone": "152********",
+    "wechat": "wechatnum",
+    "email": "email@qq.com",
+    "github": "https://github.com/OcaenEyes",
+    "website": "http://ai.oceangzy.top",
+    "blog": "http://oceaneyes.top",
+    "extra": "http://pmhub.oceangzy.top"
+  },
+  "projectExperience": [
+    { "date": "", "title": "prj01", "des": "", "res": "" },
+    { "date": "", "title": "prj02", "des": "", "res": "" },
+    { "date": "", "title": "prj023", "des": "", "res": "" }
+  ],
+  "workExperience": [
+    { "date": "", "company": "com-01", "job": "prj01", "des": "", "res": "" },
+    { "date": "", "company": "com-02", "job": "prj02", "des": "", "res": "" },
+    { "date": "", "company": "com-03", "job": "prj023", "des": "", "res": "" }
+  ],
+  "skills": [
+    { "skill": "", "score": "" },
+    { "skill": "", "score": "" },
+    { "skill": "", "score": "" },
+    { "skill": "", "score": "" },
+    { "skill": "", "score": "" },
+    { "skill": "", "score": "" }
+  ],
+  "extra": {}
+}

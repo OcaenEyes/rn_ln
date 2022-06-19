@@ -1,40 +1,35 @@
-import { Avatar, Card, PageHeader } from "antd";
 import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
+  UserOutlined,
+  ProjectOutlined,
+  ExperimentOutlined,
+  RocketOutlined,
 } from "@ant-design/icons";
+import { Card, PageHeader, Tag } from "antd";
 import "../../themes/resume.less";
 const Resume01 = () => {
-  const { Meta } = Card;
+  var resumeData = require("../../data/resume.json");
+  console.log(resumeData);
   return (
     <div className="resume-detail">
       <PageHeader
-        className="site-page-header"
+        className="resume-detail-header"
         onBack={() => window.history.back()}
         title="Reusme"
         subTitle="This is a resume"
       />
-      <Card
-        hoverable={true}
-        style={{ backgroundColor: "#000", width: "80%",margin:"0 10%" }}
-        cover={
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-          />
-        }
-        actions={[
-          <SettingOutlined key="setting" />,
-          <EditOutlined key="edit" />,
-          <EllipsisOutlined key="ellipsis" />,
-        ]}
-      >
-        <Meta
-          avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-          title={"Resume Model "}
-          description="This is the description"
-        />
+      <Card className="resume-detail-content" hoverable={true}>
+        <div>
+          <Tag icon={<UserOutlined />}>个人简介</Tag>
+        </div>
+        <div>
+          <Tag icon={<ExperimentOutlined />}>项目经历</Tag>
+        </div>
+        <div>
+          <Tag icon={<ProjectOutlined />}>工作经历</Tag>
+        </div>
+        <div>
+          <Tag icon={<RocketOutlined />}>技能📖</Tag>
+        </div>
       </Card>
     </div>
   );

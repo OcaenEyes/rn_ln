@@ -1,5 +1,12 @@
 .resume-detail{
-    width: auto;
-    text-align: center;
-    text-emphasis: none;
+    display: flex;
+    flex-direction: column;
+    height: 96vh;
+    .resume-detail-content{
+        overflow-y: auto;
+        margin: 8px 10%;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
 }

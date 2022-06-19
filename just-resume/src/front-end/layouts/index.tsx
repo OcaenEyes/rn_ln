@@ -8,7 +8,7 @@ import "./index.less";
 import "../themes/custom-dark.css";
 import "../themes/custom-default.css";
 import React, { useState } from "react";
-import { BackTop, ConfigProvider, Layout, Menu, Space, Switch } from "antd";
+import { ConfigProvider, Layout, Menu, Space, Switch } from "antd";
 import { Route, Routes } from "react-router-dom";
 import CustomeRoutes from "../../routes/router";
 const { Header, Sider, Content, Footer } = Layout;
@@ -27,6 +27,7 @@ const FrontEnd = () => {
       setChangeStatus(!changeStatus);
     }
   };
+
   return (
     <ConfigProvider prefixCls={prefix}>
       <Layout className={`site-layout ${prefix} `}>
@@ -69,22 +70,6 @@ const FrontEnd = () => {
                 ></Route>
               ))}
             </Routes>
-            <BackTop
-              visibilityHeight={1}
-              style={{
-                zIndex: 1,
-                height: 40,
-                width: 40,
-                lineHeight: "40px",
-                borderRadius: 4,
-                backgroundColor: "#1088e9",
-                color: "#fff",
-                textAlign: "center",
-                fontSize: 14,
-              }}
-            >
-              ↑
-            </BackTop>
           </Content>
           <Footer className="site-foot" style={{ textAlign: "center" }}>
             OCEAN GZY
