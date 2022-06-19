@@ -4,7 +4,7 @@ import {
   EllipsisOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-
+import "../../themes/resume.less";
 const Resume01 = () => {
   const { Meta } = Card;
   return (
@@ -17,7 +17,7 @@ const Resume01 = () => {
       />
       <Card
         hoverable={true}
-        style={{ backgroundColor: "#000" }}
+        style={{ backgroundColor: "#000", width: "80%",margin:"0 10%" }}
         cover={
           <img
             alt="example"
