@@ -113,7 +113,10 @@ const ProjectInfo = () => {
       <div className="resume-detail-project-info">
         <Timeline>
           {projectInfo.map((item: any, key: any) => (
-            <Timeline.Item key={key}>
+            <Timeline.Item
+              key={key}
+              style={{ paddingBottom: "4px", paddingTop: "10px" }}
+            >
               <div className="project-summary">
                 <div>{item.title}</div>
                 <div>{item.date}</div>
@@ -125,7 +128,7 @@ const ProjectInfo = () => {
           <Timeline.Item
             color="#108ee9"
             dot={<SmileOutlined />}
-            style={{ paddingBottom: "0" }}
+            style={{ paddingBottom: "0px", paddingTop: "4px" }}
           >
             <p>🚀起航～🚀</p>
           </Timeline.Item>
@@ -145,7 +148,10 @@ const WorkInfo = () => {
       <div className="resume-detail-work-info">
         <Timeline>
           {workInfo.map((item: any, key: any) => (
-            <Timeline.Item key={key}>
+            <Timeline.Item
+              key={key}
+              style={{ paddingBottom: "6px", paddingTop: "10px" }}
+            >
               <div className="work-summary">
                 <div>{item.company}</div>
                 <div>{item.job}</div>
@@ -157,7 +163,7 @@ const WorkInfo = () => {
           <Timeline.Item
             color="#108ee9"
             dot={<SmileOutlined />}
-            style={{ paddingBottom: "0" }}
+            style={{ paddingBottom: "0px", paddingTop: "4px" }}
           >
             <p>🚀起航～🚀</p>
           </Timeline.Item>
