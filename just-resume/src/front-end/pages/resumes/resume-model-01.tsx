@@ -1,6 +1,6 @@
 import {
   UserOutlined,
-  ProjectOutlined,
+  // ProjectOutlined,
   ExperimentOutlined,
   RocketOutlined,
   SmileOutlined,
@@ -25,7 +25,7 @@ const Resume01 = () => {
       />
       <Card className="resume-detail-content" hoverable={true}>
         <UserInfo />
-        <ProjectInfo />
+        {/* <ProjectInfo /> */}
         <WorkInfo />
         <SkillInfo />
       </Card>
@@ -103,46 +103,46 @@ const UserInfo = () => {
   );
 };
 
-const ProjectInfo = () => {
-  const projectInfo = resumeData.projectExperience;
-  return (
-    <div>
-      <Tag className="resume-tag" icon={<ExperimentOutlined />}>
-        项目经历
-      </Tag>
-      <div className="resume-detail-project-info">
-        <Timeline>
-          {projectInfo.map((item: any, key: any) => (
-            <Timeline.Item
-              key={key}
-              style={{ paddingBottom: "4px", paddingTop: "10px" }}
-            >
-              <div className="project-summary">
-                <div>{item.title}</div>
-                <div>{item.date}</div>
-                <div>{item.res}</div>
-              </div>
-              <div className="project-describe">{item.des}</div>
-            </Timeline.Item>
-          ))}
-          <Timeline.Item
-            color="#108ee9"
-            dot={<SmileOutlined />}
-            style={{ paddingBottom: "0px", paddingTop: "4px" }}
-          >
-            <p>🚀起航～🚀</p>
-          </Timeline.Item>
-        </Timeline>
-      </div>
-    </div>
-  );
-};
+// const ProjectInfo = () => {
+//   const projectInfo = resumeData.projectExperience;
+//   return (
+//     <div>
+//       <Tag className="resume-tag" icon={<ExperimentOutlined />}>
+//         项目经历
+//       </Tag>
+//       <div className="resume-detail-project-info">
+//         <Timeline>
+//           {projectInfo.map((item: any, key: any) => (
+//             <Timeline.Item
+//               key={key}
+//               style={{ paddingBottom: "4px", paddingTop: "10px" }}
+//             >
+//               <div className="project-summary">
+//                 <div>{item.title}</div>
+//                 <div>{item.date}</div>
+//                 <div>{item.res}</div>
+//               </div>
+//               <div className="project-describe">{item.des}</div>
+//             </Timeline.Item>
+//           ))}
+//           <Timeline.Item
+//             color="#108ee9"
+//             dot={<SmileOutlined />}
+//             style={{ paddingBottom: "0px", paddingTop: "4px" }}
+//           >
+//             <p>🚀起航～🚀</p>
+//           </Timeline.Item>
+//         </Timeline>
+//       </div>
+//     </div>
+//   );
+// };
 
 const WorkInfo = () => {
   const workInfo = resumeData.workExperience;
   return (
     <div>
-      <Tag className="resume-tag" icon={<ProjectOutlined />}>
+      <Tag className="resume-tag" icon={<ExperimentOutlined />}>
         工作经历
       </Tag>
       <div className="resume-detail-work-info">
@@ -157,7 +157,18 @@ const WorkInfo = () => {
                 <div>{item.job}</div>
                 <div>{item.date}</div>
               </div>
-              <div>{item.des}</div>
+              {item.project.map((item: any, key: any) => (
+                <div
+                  key={key}
+                  style={{ paddingBottom: "6px", paddingTop: "10px" }}
+                >
+                  <div className="project-summary">
+                    <div>{item.title}</div>
+                    <div>{item.date}</div>
+                  </div>
+                  <div className="project-describe">{item.des}</div>
+                </div>
+              ))}
             </Timeline.Item>
           ))}
           <Timeline.Item
