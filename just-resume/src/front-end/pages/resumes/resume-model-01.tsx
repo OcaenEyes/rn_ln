@@ -24,6 +24,7 @@ const Resume01 = () => {
         subTitle="This is a resume"
       />
       <Card className="resume-detail-content" hoverable={true}>
+        <div>Resume</div>
         <UserInfo />
         {/* <ProjectInfo /> */}
         <WorkInfo />
@@ -77,15 +78,36 @@ const UserInfo = () => {
             <div>
               <div>
                 <Tag icon={<DesktopOutlined />}>Website</Tag>
-                {userInfo.website}
+                <a
+                  className="user-info-a"
+                  href={userInfo.website}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  {userInfo.website.split("//")[1]}
+                </a>
               </div>
               <div>
                 <Tag icon={<GlobalOutlined />}>Blog</Tag>
-                {userInfo.blog}
+                <a
+                  className="user-info-a"
+                  href={userInfo.blog}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  {userInfo.blog.split("//")[1]}
+                </a>
               </div>
               <div>
                 <Tag icon={<GithubOutlined />}>Github</Tag>
-                {userInfo.github}
+                <a
+                  className="user-info-a"
+                  href={userInfo.github}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  {userInfo.github.split("//")[1]}
+                </a>
               </div>
             </div>
           </div>
