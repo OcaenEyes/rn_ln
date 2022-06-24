@@ -3,6 +3,7 @@ import FrontEnd from "../front-end/layouts/index";
 import AdminEnd from "../admin/layouts";
 import ResumeAll from "../front-end/pages/resumes/resume-all-type";
 import Resume01 from "../front-end/pages/resumes/resume-model-01";
+import TestStyle from "../front-end/pages/test";
 
 const ResumeRoutes = [
   {
@@ -31,6 +32,10 @@ const FrontRoutes = [
         path: "index",
         element: <FrontEnd />,
         children: ResumeRoutes,
+      },
+      {
+        path: "test",
+        element: <TestStyle />,
       },
     ],
   },
