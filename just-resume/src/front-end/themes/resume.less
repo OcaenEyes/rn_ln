@@ -1,11 +1,21 @@
 .resume-detail {
   display: flex;
+  position: relative;
   flex-direction: column;
-  height: 168vh;
+  height: 100%;
+  .resume-detail-header {
+    position: absolute;
+    height: 68px;
+    z-index: 999;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    background-color: #fff;
+  }
   .resume-detail-content {
     // overflow-y: auto;
+    top: 70px;
     margin: 8px 10%;
-    height: 100%;
     // &::-webkit-scrollbar{
     //     display: none;
     // }
