@@ -24,13 +24,15 @@ const Resume01 = () => {
         subTitle="This is a resume"
       />
       <Card className="resume-detail-content" hoverable={true}>
-        <div className="resume-detail-content-title">Resume</div>
         <HeadBg />
         <div className="resume-detail-content-inner">
-          <UserInfo />
-          {/* <ProjectInfo /> */}
-          <WorkInfo />
-          <SkillInfo />
+          <div className="resume-detail-content-title">Resume</div>
+          <div className="resume-detail-content-info">
+            <UserInfo />
+            {/* <ProjectInfo /> */}
+            <WorkInfo />
+            <SkillInfo />
+          </div>
         </div>
       </Card>
     </div>
@@ -68,14 +70,7 @@ const UserInfo = () => {
         个人简介
       </Tag>
       <div className="resume-detail-user-info">
-        <div
-          style={{
-            width: "60%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-          }}
-        >
+        <div className="resume-detail-user-info-left">
           <div style={{ fontSize: "16px", fontWeight: "bold" }}>
             <Tag icon={<SmileOutlined />}>姓名</Tag>
             {userInfo.name}
@@ -88,7 +83,7 @@ const UserInfo = () => {
               justifyContent: "space-between",
             }}
           >
-            <div style={{}}>
+            <div>
               <div>
                 <Tag icon={<PhoneOutlined />}>手机</Tag>
                 {userInfo.phone}
@@ -138,7 +133,7 @@ const UserInfo = () => {
             </div>
           </div>
         </div>
-        <div style={{ width: "22%" }}>
+        <div className="resume-detail-user-info-right" style={{ width: "22%" }}>
           <Image
             width={140}
             height={140}
