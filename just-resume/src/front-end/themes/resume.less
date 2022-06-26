@@ -2,7 +2,6 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  height: 100%;
   .resume-detail-header {
     position: absolute;
     height: 68px;
@@ -16,7 +15,6 @@
     top: 70px;
     margin: 8px 10%;
     height: 100%;
-    position: relative;
     // &::-webkit-scrollbar{
     //     display: none;
     // }
@@ -24,78 +22,85 @@
       width: 100%;
       left: 0;
     }
-    .resume-detail-content-inner {
-      z-index: 10;
+    .resume-detail-content-title {
       position: absolute;
-      top: 120px;
-      .resume-detail-content-title {
+      top: 100px;
+      right: 12%;
+      text-align: right;
+      .title {
         font-weight: bold;
         font-size: 36px;
         height: 68px;
       }
-      .resume-detail-content-info {
-        height: 100%;
-        .resume-tag {
-          font-size: 16px;
-          height: 28px;
-          line-height: 1.5;
+      .describe {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+    .resume-detail-content-info {
+      margin-top: -320px;
+      position: relative;
+      height: 100%;
+      padding: 6px;
+      .resume-tag {
+        font-size: 16px;
+        height: 28px;
+        line-height: 1.5;
+        font-weight: bold;
+      }
+      .resume-detail-user-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 24px 16px 24px;
+        line-height: 2;
+        .user-info-a {
+          &:hover {
+            color: #801dae;
+          }
+        }
+        .resume-detail-user-info-left {
+          z-index: 10;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+        .resume-detail-user-info-right {
+          z-index: 10;
+        }
+      }
+
+      .resume-detail-project-info {
+        padding: 18px;
+        line-height: 2;
+      }
+      .resume-detail-work-info {
+        padding: 18px;
+        line-height: 2;
+
+        .work-summary {
+          display: flex;
+          flex-direction: row;
+          width: 40%;
+          justify-content: space-between;
           font-weight: bold;
         }
-        .resume-detail-user-info {
+        .project-summary {
+          display: flex;
+          flex-direction: row;
+          width: 20%;
+          justify-content: space-between;
+          font-weight: bold;
+        }
+      }
+      .resume-detail-skill-info {
+        padding: 18px;
+        line-height: 2;
+        .skill {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          padding: 16px 24px 16px 24px;
-          line-height: 2;
-
-          .user-info-a {
-            &:hover {
-              color: #801dae;
-            }
-          }
-          .resume-detail-user-info-left {
-            z-index: 10;
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-          }
-          .resume-detail-user-info-right {
-            z-index: 10;
-          }
-        }
-
-        .resume-detail-project-info {
-          padding: 18px;
-          line-height: 2;
-        }
-        .resume-detail-work-info {
-          padding: 18px;
-          line-height: 2;
-
-          .work-summary {
-            display: flex;
-            flex-direction: row;
-            width: 40%;
-            justify-content: space-between;
-            font-weight: bold;
-          }
-          .project-summary {
-            display: flex;
-            flex-direction: row;
-            width: 20%;
-            justify-content: space-between;
-            font-weight: bold;
-          }
-        }
-        .resume-detail-skill-info {
-          padding: 18px;
-          line-height: 2;
-          .skill {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-          }
         }
       }
     }

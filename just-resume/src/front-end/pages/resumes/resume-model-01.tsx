@@ -15,6 +15,7 @@ import { Card, PageHeader, Tag, Image, Progress, Timeline } from "antd";
 import "../../themes/resume.less";
 var resumeData = require("../../data/resume.json");
 const Resume01 = () => {
+  var resumeTitle = resumeData.resumeTitle;
   return (
     <div className="resume-detail">
       <PageHeader
@@ -25,14 +26,15 @@ const Resume01 = () => {
       />
       <Card className="resume-detail-content" hoverable={true}>
         <HeadBg />
-        <div className="resume-detail-content-inner">
-          <div className="resume-detail-content-title">Resume</div>
-          <div className="resume-detail-content-info">
-            <UserInfo />
-            {/* <ProjectInfo /> */}
-            <WorkInfo />
-            <SkillInfo />
-          </div>
+        <div className="resume-detail-content-title">
+          <div className="title">{resumeTitle.title}</div>
+          <div className="describe">{resumeTitle.desc}</div>
+        </div>
+        <div className="resume-detail-content-info">
+          <UserInfo />
+          {/* <ProjectInfo /> */}
+          <WorkInfo />
+          <SkillInfo />
         </div>
       </Card>
     </div>
@@ -44,19 +46,72 @@ const HeadBg = () => {
     <div className="resume-detail-headbg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="100%"
         height="100%"
-        viewBox="0 0 979 598.351"
+        viewBox="0 0 937 473.159"
       >
-        <path
-          id="bg"
-          data-name="bg"
-          d="M1117.661,597.894h0l-978-423.174V.5h978V597.892Z"
-          transform="translate(-139.161 0)"
-          fill="blue"
-          stroke="#707070"
-          strokeWidth="1"
-        />
+        <defs>
+          <linearGradient
+            id="linear-gradient"
+            y1="0.013"
+            x2="1"
+            y2="0.016"
+            gradientUnits="objectBoundingBox"
+          >
+            <stop offset="0" stop-color="#108ee9" />
+            <stop offset="1" stop-color="#87d068" />
+          </linearGradient>
+          <filter
+            id="减去_1"
+            x="0"
+            y="0"
+            width="937"
+            height="473.159"
+            filterUnits="userSpaceOnUse"
+          >
+            <feOffset dy="3" />
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="blur" />
+            <feComposite in="SourceGraphic" />
+          </filter>
+          <filter
+            id="减去_1-2"
+            x="0"
+            y="0"
+            width="937"
+            height="473.159"
+            filterUnits="userSpaceOnUse"
+          >
+            <feOffset dy="3" />
+            <feGaussianBlur stdDeviation="3" result="blur-2" />
+            <feFlood flood-opacity="0.161" result="color" />
+            <feComposite operator="out" in="SourceGraphic" in2="blur-2" />
+            <feComposite operator="in" in="color" />
+            <feComposite operator="in" in2="SourceGraphic" />
+          </filter>
+        </defs>
+        <g data-type="innerShadowGroup">
+          <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#减去_1)">
+            <path
+              id="减去_1-3"
+              data-name="减去 1"
+              d="M1250.147,455.659l-919-301.888V.5h919V455.659Z"
+              transform="translate(-322.15 5.5)"
+              fill="url(#linear-gradient)"
+            />
+          </g>
+          <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#减去_1-2)">
+            <path
+              id="减去_1-4"
+              data-name="减去 1"
+              d="M1250.147,455.659l-919-301.888V.5h919V455.659Z"
+              transform="translate(-322.15 5.5)"
+              fill="#fff"
+            />
+          </g>
+        </g>
       </svg>
     </div>
   );
@@ -230,7 +285,7 @@ const WorkInfo = () => {
 const SkillInfo = () => {
   const skillInfo = resumeData.skills;
   return (
-    <div style={{ zIndex: "-5" }}>
+    <div>
       <Tag className="resume-tag" icon={<RocketOutlined />}>
         技能📖
       </Tag>
