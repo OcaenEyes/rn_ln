@@ -11,7 +11,15 @@ import {
   MailOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-import { Card, PageHeader, Tag, Image, Progress, Timeline } from "antd";
+import {
+  Card,
+  PageHeader,
+  Tag,
+  Image,
+  Progress,
+  Timeline,
+  Tooltip,
+} from "antd";
 import "../../themes/resume.less";
 var resumeData = require("../../data/resume.json");
 const Resume01 = () => {
@@ -154,36 +162,54 @@ const UserInfo = () => {
             <div>
               <div>
                 <Tag icon={<DesktopOutlined />}>Website</Tag>
-                <a
-                  className="user-info-a"
-                  href={userInfo.website}
-                  target={"_blank"}
-                  rel="noreferrer"
+                <Tooltip
+                  title="点击查看我的网站应用"
+                  color={"lime"}
+                  placement="right"
                 >
-                  {userInfo.website.split("//")[1]}
-                </a>
+                  <a
+                    className="user-info-a"
+                    href={userInfo.website}
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    {userInfo.website.split("//")[1]}
+                  </a>
+                </Tooltip>
               </div>
               <div>
                 <Tag icon={<GlobalOutlined />}>Blog</Tag>
-                <a
-                  className="user-info-a"
-                  href={userInfo.blog}
-                  target={"_blank"}
-                  rel="noreferrer"
+                <Tooltip
+                  title="点击查看我的博客"
+                  color={"lime"}
+                  placement="right"
                 >
-                  {userInfo.blog.split("//")[1]}
-                </a>
+                  <a
+                    className="user-info-a"
+                    href={userInfo.blog}
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    {userInfo.blog.split("//")[1]}
+                  </a>
+                </Tooltip>
               </div>
               <div>
                 <Tag icon={<GithubOutlined />}>Github</Tag>
-                <a
-                  className="user-info-a"
-                  href={userInfo.github}
-                  target={"_blank"}
-                  rel="noreferrer"
+                <Tooltip
+                  title="点击查看我的Github"
+                  color={"lime"}
+                  placement="right"
                 >
-                  {userInfo.github.split("//")[1]}
-                </a>
+                  <a
+                    className="user-info-a"
+                    href={userInfo.github}
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    {userInfo.github.split("//")[1]}
+                  </a>
+                </Tooltip>
               </div>
             </div>
           </div>
