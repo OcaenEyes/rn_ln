@@ -4,6 +4,7 @@ import AdminEnd from "../admin/layouts";
 import ResumeAll from "../front-end/pages/resumes/resume-all-type";
 import Resume01 from "../front-end/pages/resumes/resume-model-01";
 import TestStyle from "../front-end/pages/test";
+import Resume02 from "../front-end/pages/resumes/resume-model-02";
 
 const ResumeRoutes = [
   {
@@ -36,6 +37,10 @@ const FrontRoutes = [
       {
         path: "test",
         element: <TestStyle />,
+      },
+      {
+        path: "aboutme",
+        element: <Resume02 />,
       },
     ],
   },
